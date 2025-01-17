@@ -42,10 +42,13 @@ typedef struct Blockchain {
 
 /* FUNCTIONS */
 void calculateHash(block_t *block, unsigned char *hash);
-block_t *createBlock(int index, const char *data, unsigned char *prevHash);
+block_t *createBlock(int index, data_t *data, unsigned char *prevHash);
 Blockchain *initBlockchain(void);
-void addBlock(Blockchain *blockchain, const char *data);
+void addBlock(Blockchain *blockchain, data_t *data);
 void printBlockchain(Blockchain *blockchain);
 void freeBlockchain(Blockchain *blockchain);
+data_t *createData(char sender[DATASIZE_MAX], char receiver[DATASIZE_MAX], char amount[512]);
+int addTransaction(Blockchain *blockchain, block_t *block, char sender[DATASIZE_MAX], char receiver[DATASIZE_MAX], char amount[512]);
+int validateBlockchain(Blockchain *blockchain);
 
 #endif /* blockchain.h */
