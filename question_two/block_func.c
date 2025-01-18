@@ -125,7 +125,7 @@ void addBlock(Blockchain *blockchain, data_t *data) {
  * @amount: amount of transaction
  * Return: 1 on success or 0 on failure
  */
-int addTransaction(Blockchain *blockchain, block_t *block, char sender[DATASIZE_MAX], char receiver[DATASIZE_MAX], char amount[512]) {
+int addTransaction(Blockchain *blockchain, block_t *block, const char *sender, const char *receiver, const char *amount) {
     if (!block || !blockchain)
     {
         printf("Blockchain or block not valid\n");

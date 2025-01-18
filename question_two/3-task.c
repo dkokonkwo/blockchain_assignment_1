@@ -28,9 +28,8 @@ int main() {
     /* adding new transactions to the last block */
     block_t *lastBlock = blockchain->tail;
 
-    addTransaction(blockchain, lastBlock->data, "Eve", "Frank", "40btc");
-    addTransaction(blockchain, lastBlock->data, "Grace", "Hank", "25btc");
-
+    addTransaction(blockchain, lastBlock, "Eve", "Frank", "40btc");
+    addTransaction(blockchain, lastBlock, "Grace", "Hank", "25btc");
     /* Recalculating block's hash with after adding transcactions*/
     calculateHash(lastBlock, lastBlock->currHash);
 

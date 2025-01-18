@@ -48,7 +48,7 @@ void addBlock(Blockchain *blockchain, data_t *data);
 void printBlockchain(Blockchain *blockchain);
 void freeBlockchain(Blockchain *blockchain);
 data_t *createData(const char *sender, const char *receiver, const char *amount);
-int addTransaction(Blockchain *blockchain, block_t *block, char sender[DATASIZE_MAX], char receiver[DATASIZE_MAX], char amount[512]);
+int addTransaction(Blockchain *blockchain, block_t *block, const char *sender, const char *receiver, const char *amount);
 int validateBlockchain(Blockchain *blockchain);
 
 #endif /* blockchain2.h */
